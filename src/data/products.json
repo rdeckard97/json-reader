@@ -1,0 +1,17 @@
+[
+    {
+        "nombre": "LAPTOP ACER CORE I3",
+        "marca": "ACER",
+        "precio": 1500.00 
+    },
+    {
+        "nombre": "MOUSE GAMER",
+        "marca": "MICRONICS",
+        "precio": 30.00 
+    },
+    {
+        "nombre": "AUDIFONOS INALAMBRICOS",
+        "marca": "SONY",
+        "precio": 75.00 
+    }
+]
