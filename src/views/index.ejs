@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <%= title %> </title>
+  <title><%= title %> </title>
 </head>
 <body>
-    <p> <%= message %> </p>
+  <h1>JSON READER</h1>
+  <form action="/files/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="jsonFile" accept=".json" required>
+    <button type="submit">Subir</button>
+  </form>
 </body>
 </html>

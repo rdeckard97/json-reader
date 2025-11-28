@@ -1,19 +1,21 @@
-const express = require('express');
-const path = require('path');
+import express from 'express';
+import readerRoutes from './routes/reader.js';
+import homeRoutes from './routes/home.js';
+import path from 'path';
 const app = express();
-
+const port = process.env.PORT || 8000;
 
 // views
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('views', path.join(process.cwd(), 'src/views'));
+app.use(express.urlencoded({ extededed: true}));
+app.use(express.json());
 
-// public folder
-app.use(express.static(path.join(__dirname, 'public')));
 
-// routes
-const home_routes = require('./routes/home');
-app.use('/', home_routes);
 
-app.listen(3000, ()=>{
-    console.log('Server on http://localhost:'+3000);
+app.use('/files', readerRoutes);
+app.use('/', homeRoutes);
+
+app.listen(port, ()=>{
+    console.log('Server on http://localhost:'+port);
 });
